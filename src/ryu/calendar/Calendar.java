@@ -19,22 +19,26 @@ public class Calendar {
 	}
 	
 	public static void main(String[] args) {
-		System.out.printf("반복 횟수를 입력하세요 : \n");
-		Scanner scanner1 = new Scanner(System.in);
-		int times = scanner1.nextInt();
-		
-		System.out.printf("월을 입력하세요 : \n");
-		Scanner scanner = new Scanner(System.in);
-		int[] month = new int[times];
-		for (int i = 0; i < times; i++) {
-			month[i] = scanner.nextInt();
-		}
-		
+		String promt = "cal > ";
 		Calendar cal = new Calendar();
-		for (int i = 0; i < times; i++) {
-			System.out.printf("%d월은 %d일 까지 있습니다.\n", month[i], cal.MaxDay(month[i]));
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		while (true) {
+			System.out.printf("월을 입력하세요. \n%s", promt);
+			int month = scanner.nextInt();
+
+			if (month > 0 && month < 13) {
+			System.out.printf("%d월은 %d일 까지 있습니다.\n", month, cal.MaxDaysOfMonth[month]);
+			} else if (month == -1){
+			System.out.printf("Have a nice day!\n");
+			break;
+			} else {
+				System.out.print("1에서 12사이의 값을 입력하세요.\n");
+			}
+			
+			System.out.printf("\n");
 		}
 		scanner.close();
-		scanner1.close();
 	}
 }
