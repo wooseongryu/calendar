@@ -12,20 +12,27 @@ public class CalPrint {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("월을 입력하세요.");
-		System.out.print("> ");
-		Scanner scanner = new Scanner(System.in);
-		int month = scanner.nextInt();
-		int MaxDay = MaxDay(month);
+		while (true) {
+			System.out.println("월을 입력하세요.");
+			System.out.print("> ");
+			Scanner scanner = new Scanner(System.in);
+			int month = scanner.nextInt();
+			if (month == -1) {
+				System.out.println("Bye");
+				break;
+			} else {
+				int MaxDay = MaxDay(month);
 		
-		System.out.println(" 월 화 수  목 금  토  일");
-		System.out.println("--------------------");
-		for (int i = 1; i <= MaxDay; i++) {
-			System.out.printf("%3d", i);
-			if (i % 7 == 0) {
-				System.out.println();
+				System.out.println(" 월  화 수  목 금  토  일");
+				System.out.println("---------------------");
+				for (int i = 1; i <= MaxDay; i++) {
+					System.out.printf("%3d", i);
+					if (i % 7 == 0) {
+						System.out.println();
+					}
+				}
+				System.out.printf("\n\n");
 			}
 		}
 	}
-
 }
