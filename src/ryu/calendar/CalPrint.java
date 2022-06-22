@@ -4,6 +4,7 @@ import java.util.Scanner;
 // 31 --- 1 3 5 7 8 10 12
 // 28 --- 2
 // 30 --- 4 6 9 11
+//123
 public class CalPrint {
 	private static final int[] MaxDaysOfMonth =  {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	
